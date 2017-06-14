@@ -1,9 +1,9 @@
 require 'sinatra'
 
 get '/' do
-  "Hello World"
+  "Hello world"
 end
 
 get '/wyncode' do
-  "Hello world"
+  "<strong>Hello</strong><em>world</em>"
 end
