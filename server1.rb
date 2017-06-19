@@ -1,7 +1,8 @@
 require 'sinatra'
 
 get '/' do
-  "Hello world"
+redirect '/hello.html'
+
 end
 
 get '/wyncode' do
