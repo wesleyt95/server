@@ -1,10 +1,14 @@
 require 'sinatra'
+require 'httparty'
+require 'nokogiri'
+
 
 get '/' do
-redirect '/hello.html'
+  html = HTTParty.get 'http://jobs.oodle.com/careers/miami-fl/?sc=job&r=60'
 
-end
+  doc = Nokogiri::HTML(html)
 
-get '/wyncode' do
-  "<strong>Hello</strong><em>world</em>"
+   doc.css(".title-link").each do |element|
+    p element.text.strip
+   end
 end
