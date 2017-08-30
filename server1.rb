@@ -8,7 +8,7 @@ get '/' do
 
   doc = Nokogiri::HTML(html)
 
-   doc.css(".title-link").each do |element|
-    p element.text.strip
+   doc.css(".title-link").map do |element|
+      "<p>#{element.text.strip}</p>"
    end
 end
